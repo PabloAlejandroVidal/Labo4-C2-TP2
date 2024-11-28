@@ -1,0 +1,37 @@
+<div class="tabla-container">
+
+  <table>
+    <thead>
+      <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Rol</th>
+      <th>Email Verificado</th>
+      <th>Cuenta Aprobada</th>
+    </tr>
+    </thead>
+
+    <tbody>
+        <ng-container *ngFor="let usuario of usuarios trackBy: trackById;">
+          <tr>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.apellido}}</td>
+            <td>{{usuario.rol}}</td>
+            <td>{{usuario.emailVerificado ? 'Si': 'No'}}</td>
+            @if (usuario.rol === 'especialista') {
+              <td>
+                <app-siwich-button id="{{usuario.id}}" (modelChange)="updateEmailVerificacion(getEspecialista(usuario), $event)" [model]="usuario.aprobado" [checkedName]="'Si'" [uncheckedName]="'No'"></app-siwich-button>
+              </td>
+            }
+            @else {
+              <td>No corresponde</td>
+            }
+
+            <!-- <td>{{(usuario | aprobado)}}</td> -->
+          </tr>
+        </ng-container>
+      </tbody>
+
+    </table>
+</div>
+

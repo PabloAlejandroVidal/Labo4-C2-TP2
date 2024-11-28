@@ -1,0 +1,56 @@
+.toggle {
+  margin: 2px;
+  background: #eee;
+  width: 100px;
+  height: 25px;
+  padding: 3px;
+  box-sizing: content-box;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+}
+.toggle:hover{
+  background: white;
+}
+
+label {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  background: #f77;
+  display: flex;
+  border-radius: 100%;
+  transition: all 0.5s ease .5s;
+  margin-left: 0%;
+}
+
+input {
+  display: none;
+}
+
+.before, .after {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .9em;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  // background-color: #75ff7e96;
+  text-align: center;
+  z-index: 0;
+  color: rgb(75, 204, 68);
+  left: 0;
+  top: 0;
+}
+
+.after {
+  margin-left: 100%;
+  transform: translateX(-100%);
+  color: rgb(255, 33, 33);
+  border-radius: 100%;
+}
+
+label {
+ position: relative;
+ z-index: 1;
+}

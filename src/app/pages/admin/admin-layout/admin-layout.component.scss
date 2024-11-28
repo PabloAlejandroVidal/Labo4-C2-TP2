@@ -1,0 +1,14 @@
+
+.admin-layout{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.router-container{
+  width: 100%;
+  min-height: 100%; /* Mantén un mínimo del 100% del viewport */
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Asegura que el contenido crezca verticalmente */
+}

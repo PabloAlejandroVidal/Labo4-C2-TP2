@@ -1,0 +1,9 @@
+<div class="admin-layout">
+
+    <app-nav-bar [menuBtnActive]="menuActive" [showLogout]="true" [showMenu]="true" (logout)="onLogOut()" (toggle)="onMenu()" [routes]="routesForNavBar"></app-nav-bar>
+    <app-side-bar class="app-side-bar" [menuBtnActive]="menuActive" [btnVisible]="false" (toggle)="onMenu()" [routes]="routesForSideBar"></app-side-bar>
+    <div class="router-container" [@routeAnimations]="getRouteAnimationData()">
+      <router-outlet></router-outlet>
+    </div>
+
+</div>

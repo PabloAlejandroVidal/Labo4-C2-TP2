@@ -1,0 +1,278 @@
+@use 'variables' as *;
+
+.btn{
+  text-align: center;
+  align-content: center;
+  border: none;
+  outline: none;
+  min-width: 6em;
+  border-radius: .2em;
+  padding: .2em;
+  color: $play-btn-txt-color;
+  background-color: $play-btn-color;
+  cursor: pointer;
+  user-select: none;
+}
+.btn:hover{
+  background-color: $play-btn-color-hover;
+}
+.btn:active{
+  background-color: $play-btn-color-active;
+}
+
+.btn-design{
+  position: relative;
+  text-align: center;
+  align-content: center;
+  border: none;
+  outline: none;
+  min-width: 6em;
+  border-radius: .2em;
+  padding: .2em;
+  color: $play-btn-txt-color;
+  background-color: $play-btn-color;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  z-index: 1;
+  text-decoration: none;
+}
+.btn-design:hover{
+}
+.btn-design:active{
+}
+.btn-design:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  background-size: 10em 10em;
+  z-index: -1;
+  width: calc(100% );
+  height: calc(100% );
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  animation: glowing-button 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: .2em;
+}
+
+@keyframes glowing-button {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20em 0;
+  }
+}
+
+.btn-design:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: .2em;
+}
+.btn-design:hover:after {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.btn-design:active:after {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+.btn-design-back:hover:before {
+  background: linear-gradient(
+    90deg,
+    #282828,
+    #7e7e7e,
+    #2b2b2b,
+    #7e7e7e,
+    #282828,
+    #7e7e7e,
+    #282828,
+  );
+  background-size: 24em 24em;
+  animation: glowing-button-back 6s linear infinite;
+}
+@keyframes glowing-button-back {
+  0% {
+  background-position: 0em 0;
+  }
+  100% {
+    background-position: -48em 0;
+  }
+}
+
+.btn-design-game:before {
+  background-color: #060035;
+  background-color: $game-bg-color;
+}
+.btn-design-game:active:before {
+  background-color: #060035;
+  background-color: $game-bg-color-active;
+}
+.btn-design-game:hover:before {
+  background: linear-gradient(
+    90deg,
+    #000000,
+    $game-bg-color-hover,
+    #000000,
+    $game-bg-color-hover,
+    #000000,
+  );
+  background-size: 30em 30em;
+  animation: glowing-button-game 6s linear infinite;
+}
+@keyframes glowing-button-game {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 60em 0;
+    background-size: 30em 30em;
+  }
+}
+
+
+
+.btn-design-form:before {
+  background: linear-gradient(
+    45deg,
+    #00ffdd,
+    #ae00ff,
+    #00ffdd,
+    #ae00ff,
+    #00ffdd,
+  );
+  background-size: 20em 20em;
+  animation: glowing-button-form 3s linear infinite;
+}
+.btn-design-form:hover:after {
+  background: linear-gradient(
+    -45deg,
+    #00ffdd,
+    #ae00ff,
+    #00ffdd,
+    #ae00ff,
+    #00ffdd,
+  );
+  background-size: 20em 20em;
+  animation: glowing-button-form-hover 2s linear infinite;
+}
+@keyframes glowing-button-form {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40em 0;
+  }
+}
+@keyframes glowing-button-form-hover {
+  0% {
+    background-position: 40em 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+
+
+
+
+//btn jump!
+.btn-jump {
+  opacity: 0;
+  transform: translateY(6em);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.container{
+  z-index: 2;
+  position: relative;
+}
+.wof-container{
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer y Edge */
+  height: 100%;
+}
+.wof-container::-webkit-scrollbar {
+  display: none;  /* Oculta la barra de scroll */
+}
+
+
+
+
+/* Estilo de la tarjeta */
+.reflect-element {
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  z-index: 1;
+}
+
+.reflect-element:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+}
+.reflect-element:hover:after{
+  content: '';
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.6),
+    rgb(255, 255, 255),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6),
+    rgb(255, 255, 255),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6),
+    );
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  background-size: 20em 20em;
+  z-index: 1;
+  opacity: .4;
+  width: calc(100% );
+  height: calc(100% );
+  animation: glowing-button-card 5s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: .2em;
+}
+
+@keyframes glowing-button-card {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100em 0;
+  }
+}

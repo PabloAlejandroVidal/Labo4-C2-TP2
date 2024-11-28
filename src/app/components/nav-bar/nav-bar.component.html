@@ -1,0 +1,11 @@
+<header class="header-container">
+  <div class="header-content">
+    <app-toggle-menu [isToggleActive]="menuBtnActive" (toggle)="onToggle()" *ngIf="showMenu" class="header-menu">
+    </app-toggle-menu>
+    <div class="options-list">
+      <a *ngFor="let route of routes" class="header-option" routerLink="{{route.path}}"
+      routerLinkActive="active" (click)="onNavigate(route.path)">{{route.name}}</a>
+      <a *ngIf="showLogout" (click)="onLogout()" class="header-option">Logout</a>
+    </div>
+  </div>
+</header>

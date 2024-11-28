@@ -1,0 +1,44 @@
+<div class="turnos-container">
+  <h2>Buscar Turnos Disponibles</h2>
+
+  <!-- Selector de Especialidades -->
+  <label for="especialidad">Seleccione una especialidad:</label>
+  <select
+    id="especialidad"
+    [(ngModel)]="especialidadSeleccionada"
+    (change)="buscarTurnosDisponibles()"
+  >
+    <option *ngFor="let especialidad of especialidadesDisponibles" [ngValue]="especialidad">
+      {{ especialidad.nombre }}
+    </option>
+  </select>
+
+  <!-- Lista de Turnos Disponibles -->
+  <div class="turnos-disponibles" *ngIf="turnosDisponibles.length > 0">
+    <h3>Turnos Disponibles</h3>
+    <ul>
+      <li *ngFor="let turno of turnosDisponibles">
+        <div>
+          Especialidad: {{turno.especialidad}}
+        </div>
+        <div>
+          Especialista: {{turno.especialistaNombre}}
+        </div>
+        <div>
+          Fecha {{ turno.fecha | date: 'dd/MM/yy' }}
+        </div>
+        <div>
+          Duracion Estimada: {{ turno.minutosDuracion }} minutos
+        </div>
+        <div>
+          Consultorio {{ turno.consultorio }}
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Mensaje cuando no hay turnos -->
+  <div class="sin-turnos" *ngIf="turnosDisponibles.length === 0 && especialidadSeleccionada">
+    <p>No hay turnos disponibles para esta especialidad.</p>
+  </div>
+</div>

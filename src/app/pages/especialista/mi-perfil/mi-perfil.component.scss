@@ -1,0 +1,81 @@
+.mi-perfil-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+}
+
+.usuario-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  align-items: stretch;
+  padding: .1em;
+  gap: 1em;
+
+  /* Tamaño flexible */
+  width: 100%;
+  max-width: 40em; /* Limita el ancho máximo del card */
+  background-color: white;
+  border-radius: 0.4em;
+  overflow: hidden;
+}
+
+.imagen-container {
+  border-radius: 0.4em;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  flex: 1 1 30%; /* Flexible: ocupa el 50% por defecto */
+  max-width: 20em;
+  aspect-ratio: 1/1; /* Relación de aspecto cuadrada */
+}
+
+.imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  background-color: #f9f9f9; /* Fondo claro */
+  padding: 1em;
+  border-radius: 0.4em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  font-family: Arial, sans-serif;
+}
+
+.info-field {
+  display: flex;
+  justify-content: space-between; /* Espacio entre label y valor */
+  padding: 0.5em 0;
+  border-bottom: 1px solid #ddd; /* Línea divisoria */
+}
+
+.info-field:last-child {
+  border-bottom: none; /* Sin línea en el último campo */
+}
+
+.info-label {
+  font-weight: bold;
+  color: #333; /* Texto más oscuro */
+}
+
+.info-value {
+  color: #555; /* Texto ligeramente más claro */
+}
+
+
+/* Cambiar diseño cuando el ancho es pequeño */
+@media (max-width: 600px) {
+  .usuario-card {
+    flex-direction: column; /* Cambia a diseño vertical */
+  }
+
+  .imagen-container {
+    width: 100%; /* Ocupa todo el ancho en el diseño vertical */
+    max-width: none; /* Elimina el límite del ancho */
+  }
+}

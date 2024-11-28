@@ -1,0 +1,25 @@
+<div class="toggle" (click)="input.click()">
+  <div class="after">
+    {{uncheckedName}}
+  </div>
+  <div class="before">
+    {{checkedName}}
+  </div>
+  <input #input type="checkbox" id="{{id}}" name="{{id}}" [checked]="model" (click)="onChange($event)">
+  <label [@toggleState]="animationState" for="{{id}}">
+  </label>
+ </div>
+
+
+<!--  <div class="toggle">
+  <div class="after">
+    {{uncheckedName}}
+  </div>
+  <div class="before">
+    {{checkedName}}
+  </div>
+  <input type="checkbox" id="btn" onclick="change">
+  <label for="btn">
+  </label>
+ </div>
+ -->

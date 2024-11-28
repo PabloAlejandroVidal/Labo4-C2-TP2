@@ -1,0 +1,6 @@
+<div *ngIf="verificado; else error">
+  <h1>¡Correo verificado exitosamente!</h1>
+</div>
+<ng-template #error>
+  <h1>El enlace no es válido o ya fue usado.</h1>
+</ng-template>

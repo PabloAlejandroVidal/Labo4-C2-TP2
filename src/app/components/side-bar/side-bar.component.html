@@ -1,0 +1,14 @@
+
+<div appClickInOut (clickOutside)="closeWhenIsOpen()" (clickInside)="closeWhenIsOpen()" class="side-bar-container" [ngClass]="{'menu-active': menuBtnActive}">
+
+  <div *ngIf="btnVisible" class="menu-btn-container">
+    <app-toggle-menu [isToggleActive]="menuBtnActive" (toggle)="onToggle()" class="header-menu">
+    </app-toggle-menu>
+  </div>
+  <div class="side-menu">
+
+    <a *ngFor="let route of routes" class="header-option" routerLink="{{route.path}}"
+    routerLinkActive="active" (click)="onNavigate(route.path)">{{route.name}}</a>
+  </div>
+
+</div>

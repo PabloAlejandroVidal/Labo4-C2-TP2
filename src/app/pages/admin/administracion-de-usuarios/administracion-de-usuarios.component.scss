@@ -1,0 +1,37 @@
+
+.tabla-container{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  // border: 2px solid black;
+}
+table{
+  width: 100%;
+  border-radius: .4em;
+  padding: .4em;
+  background-color: rgb(0, 4, 118);
+
+  border-collapse: collapse;
+  border: none;
+  outline: none;
+}
+thead{
+  background-color: rgb(46, 207, 196);
+  color: rgb(0, 0, 0);
+  text-align: left;
+}
+tr{
+  outline: 1px solid black;
+  background-color: rgb(255, 232, 190);
+}
+td, th{
+  padding: .6em .6em;
+  border: none;
+  outline: none;
+  display: table-cell;
+  // outline: 1px solid black;
+}
+th{
+  font-weight: 400;
+  font-size: 1.2em;
+}

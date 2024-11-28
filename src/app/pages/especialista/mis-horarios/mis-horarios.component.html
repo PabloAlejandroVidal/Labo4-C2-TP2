@@ -1,0 +1,66 @@
+<div class="horario-container">
+  <!-- Lista de horarios asignados -->
+  <div class="horarios-asignados">
+    <h3>Horarios Asignados</h3>
+    <ul>
+      <div *ngFor="let dia of diasDisponibles">
+        <ng-container *ngIf="misOcupaciones[dia].length">
+          {{ diaParaMostrar[dia] }}
+          <div *ngFor="let ocupacion of misOcupaciones[dia]" class="dia-container">
+            Consultorio: {{  ocupacion.consultorio }} |
+            Horario: {{ getHoraMinuto(ocupacion.horario.inicio) }} - {{ getHoraMinuto(ocupacion.horario.fin) }} |
+            <button>Liberar</button>
+          </div>
+        </ng-container>
+      </div>
+    </ul>
+  </div>
+
+  <!-- Panel de asignación -->
+  <div class="panel-asignacion">
+    <h3>Asignar Disponibilidad</h3>
+    <div class="panel-selector">
+
+      <div class="selector">
+        <label for="dia-selector">Día:</label>
+        <select *ngIf="diaSeleccionado" id="dia-selector" [(ngModel)]="diaSeleccionado" (ngModelChange)="onDiaSelected($event)" [name]="'dia'">
+          <option *ngFor="let dia of diasDisponibles" [ngValue]="dia">{{ diaParaMostrar[dia] }} </option>
+        </select>
+      </div>
+
+      <div class="selector">
+        <label for="consultorio-selector">Consultorio:</label>
+        <select *ngIf="consultorioSeleccionado" id="consultorio-selector" [(ngModel)]="consultorioSeleccionado" (ngModelChange)="onConsultorioSeleccionado($event)" [name]="'consultorio'">
+          <option *ngFor="let consultorio of consultoriosDisponibles" [ngValue]="consultorio"> Consultorio {{ consultorio.numero }} </option>
+        </select>
+      </div>
+    </div>
+
+    <!-- //over and done with -->
+
+    <div class="consultorios-disponibles">
+      <h4>Horarios Disponibles</h4>
+      <div class="consultorios">
+        <div *ngIf="consultorioSeleccionado" class="consultorio">
+          <h5>Consultorio {{ consultorioSeleccionado.numero }}</h5>
+
+
+          <div class="bloques">
+
+
+            <label for="desde-selector">Desde:</label>
+            <select id="desde-selector" [(ngModel)]="horarioInicioSeleccionado" (ngModelChange)="onHoraSelected()">
+              <option *ngFor="let horario of horariosInicioDisponibles" [ngValue]="horario">{{ getHoraMinuto(horario) }} </option>
+            </select>
+            <label for="hasta-selector">Hasta:</label>
+            <select id="hasta-selector" [(ngModel)]="horarioHastaSeleccionada" (ngModelChange)="onHoraSelected()">
+              <option *ngFor="let horario of horariosHastaDisponibles" [ngValue]="horario">{{ getHoraMinuto(horario) }} </option>
+            </select>
+          </div>
+        </div>
+        <button (click)="asignarDisponibilidad()">Asignar</button>
+      </div>
+    </div>
+
+  </div>
+</div>

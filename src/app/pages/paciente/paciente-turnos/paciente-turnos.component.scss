@@ -1,0 +1,40 @@
+.turnos-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.turnos-container h2 {
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.turnos-disponibles ul {
+  list-style: none;
+  padding: 0;
+}
+
+.turnos-disponibles li {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin: 5px 0;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.sin-turnos {
+  text-align: center;
+  color: #999;
+}

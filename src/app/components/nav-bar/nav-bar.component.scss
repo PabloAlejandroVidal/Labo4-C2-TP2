@@ -1,0 +1,53 @@
+@use 'index' as *;
+@use '@angular/material' as mat;
+
+.header-container{
+  color: $nav-color;
+  background-color: $nav-btn-color;
+}
+.header-content{
+  height: 3em;
+  display: flex;
+  justify-content: space-between;
+}
+.options-list{
+  display: flex;
+  justify-content: end;
+  flex-grow: 1;
+}
+.header-menu{
+  height: 3em;
+}
+.header-option{
+  position: relative;
+  height: 3em;
+  min-width: 6em;
+  display: inline-block;
+  list-style: none;
+  text-align: center;
+  align-content: center;
+  padding: 0 1em;
+  text-decoration: none;
+  color: $nav-color;
+}
+.header-option:visited{
+  color: $nav-color;
+}
+.header-option:hover{
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+.header-option:active{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.active {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+
+@media only screen and (max-width: 600px) {
+  .options-container{
+    flex-direction: column;
+  }
+}
+

@@ -1,0 +1,31 @@
+
+<!--
+  <div class="auth wof-container">
+    <div class="router-content">
+      <router-outlet/>
+    </div>
+       <div class="btns-content">
+      <button class="btn-design btn-design-form btn-jump" *ngIf="isLoginRouteActive()" (click)="goRegister()">Ir a la página registro</button>
+      <button class="btn-design btn-design-form btn-jump" *ngIf="isRegisterRouteActive()" (click)="goLogin()">Ir a la página login</button>
+    </div>
+  </div>
+  -->
+
+<div class="auth">
+    <header>
+      <app-nav-bar [showLogout]="false" (logout)="onLogOut()" [routes]="routesForNav"></app-nav-bar>
+    </header>
+  <main class="wof-container">
+    <router-outlet></router-outlet>
+  </main>
+  <footer class="container">
+      <div class="footer-content">
+        <!-- <div class="container btns-container">
+          <a class="btn" routerLinkActive="btn-active" [routerLink]="[ 'registro' ]">Registro</a>
+          <a class="btn" routerLinkActive="btn-active" [routerLink]="[ 'login' ]">Iniciar Sesión</a>
+        </div> -->
+      </div>
+      <!-- <button class="btn-design btn-design-form btn-jump" *ngIf="isLoginRouteActive()" (click)="goRegister()">Ir a la página registro</button>
+      <button class="btn-design btn-design-form btn-jump" *ngIf="isRegisterRouteActive()" (click)="goLogin()">Ir a la página login</button> -->
+  </footer>
+</div>
